@@ -128,6 +128,7 @@ const handleInput =(e)=>{
   };
 
   return (
+    <div className="whole">
     <div>
         <div className="header">
           <div>
@@ -312,6 +313,7 @@ const handleInput =(e)=>{
         </div>
       
     </div>
+</div>
 </div>
   );
 }

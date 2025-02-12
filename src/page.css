@@ -1,36 +1,37 @@
-Body {
+* {
+  
+    box-sizing: border-box;
+  }
+.whole{
+    background-color: #052228;
+}
+body{
     background-color: #052228;
     margin: auto;
     justify-content: center;
+    
 }
-
 .container {
+   
     margin: 50px auto;
     text-align: center;
     width: 604px;
     height: 782.00px;
     border: 1px solid #0E464F;
     font-family: Arial, sans-serif;
-    border-radius: 10px;
-    max-width: 100%;
-    padding: 0 15px;
-    box-sizing: border-box;
-}
+    border-radius: 10px
 
-.container2 {
+  }
+  .container2{
     margin: 50px auto;
     text-align: center;
     width: 604px;
     height: 937px;
     border: 1px solid #0E464F;
     font-family: Arial, sans-serif;
-    border-radius: 10px;
-    max-width: 100%;
-    padding: 0 15px;
-    box-sizing: border-box;
-}
-
-.Total {
+    border-radius: 10px
+  }
+.Total{
     width: 700px;
     opacity: 100%;
     border: 1px solid #07373F;
@@ -39,16 +40,13 @@ Body {
     border-radius: 10px;
     margin: auto;
     align-items: center;
-    max-width: 100%;
-    box-sizing: border-box;
+    background-color: #052228;
 }
-
-.bar {
+.bar{
     display: flex;
-    flex-wrap: wrap;
 }
-
-.step-header {
+  
+  .step-header {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -56,71 +54,58 @@ Body {
     justify-content: space-between;
     margin-bottom: 0%;
     color: white;
-    flex-wrap: wrap;
-}
-
-.event-info {
+  }
+  .event-info{
     color: white;
-}
-
-.one {
-    width: 556px;
-    height: 200px;
-    border: 1px solid #07373F;
-    margin: auto;
-    justify-content: center;
-    margin-top: 20px;
-    border-radius: 10px;
-    background-color: #082023;
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-.two {
+  }
+  .one{
+   width: 556px;
+   height: 200px;
+   border: 1px solid #07373F;
+   margin: auto;
+   justify-content: center;
+   margin-top: 20px;
+   border-radius: 10px;
+   background-color: #082023;
+  }
+  .two{
     width: 558px;
-    height: 300px;
-    border: 1px solid #07373F;
-    margin: auto;
-    justify-content: center;
-    margin-top: 20px;
-    border-radius: 10px;
-    background-color: #07373F;
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-.progress-bar {
+   height: 300px;
+   border: 1px solid #07373F;
+   margin: auto;
+   justify-content: center;
+   margin-top: 20px;
+   border-radius: 10px;
+   background-color: #07373F;
+  }
+  .progress-bar {
     width: 100%;
     height: 4px;
     background-color: #ddd;
     border-radius: 5px;
     overflow: hidden;
     margin-bottom: 20px;
-}
-
-.progress {
+  }
+  
+  .progress {
     height: 100%;
     background-color: #007bff;
     transition: width 0.3s ease-in-out;
-}
-
-.step-content {
+  }
+  
+  .step-content {
     font-size: 18px;
     margin-bottom: 20px;
-}
-
-.buttons {
+  }
+  
+  .buttons {
     display: flex;
     justify-content: space-between;
     width: 556px;
     height: 48px;
-    max-width: 100%;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: auto;
-}
+  }
 
-.button {
+.button{
     padding: 10px 20px;
     font-size: 16px;
     border: none;
@@ -131,91 +116,91 @@ Body {
     transition: 0.2s;
     width: 270px;
     height: 48px;
-    max-width: calc(50% - 5px);
-    min-width: 150px;
-    flex: 1;
 }
 
-.types {
+.types{
     width: 556px;
     height: 142px;
-    background-color: #052228;
+    background-color:#052228;
     border-radius: 10px;
     border: 1px solid #07373F;
-    max-width: 100%;
-    box-sizing: border-box;
-    margin: auto;
-}
-
-.text {
+  }
+.text{
     color: white;
     margin: auto;
     text-align: left;
 }
 
-.image {
+.image{
     width: 508px;
     height: 240px;
-    max-width: 100%;
-    object-fit: contain;
 }
-
-.upload {
+.upload{
     width: 240px;
     height: 240px;
     background-color: #0E464F;
     border-radius: 20px;
     margin: auto;
     justify-content: center;
-    max-width: 100%;
 }
 
-input[type="text"],
-input[type="number"] {
+input[type="text"]{
+    width: 100%;
+    height: 48px;
+    border-radius: 7px;
+    border: 2px solid #07373F;
+    background-color: #052228;
+    color: white;
+}
+input[type="number"]{
     width: 100%;
     height: 48px;
     border-radius: 7px;
     border: 1px solid #07373F;
     background-color: #052228;
     color: white;
-    box-sizing: border-box;
-    padding: 0 10px;
+}
+label{
+   float: left;
+   color: white;
 }
 
-label {
-    float: left;
-    color: white;
-}
-
-#description {
+#description{
     width: 556px;
     height: 127px;
     border-radius: 7px;
     border: 1px solid #07373F;
     background-color: #052228;
-    max-width: 100%;
-    box-sizing: border-box;
-    padding: 10px;
 }
-
-.line {
+.line{
     width: 100%;
     height: 4px;
-    background-color: #07373F;
+    background-color:#07373F;
 }
-
+  
 button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
 }
-
-button:hover:not(:disabled) {
+  
+  button:hover:not(:disabled) {
     background-color: #0056b3;
-}
-
-.free,
-.VIP,
-.VVIP {
+  }
+  
+  .free{
+    width: 158px;
+    height: 110px;
+    border: 1px solid #197686;
+    border-radius: 10px;
+    background-color: #12464E;
+    color: white;
+    margin: auto;
+    text-align: left;
+    padding:5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .VIP{
     width: 158px;
     height: 110px;
     border: 1px solid #197686;
@@ -226,94 +211,83 @@ button:hover:not(:disabled) {
     padding: 5px;
     cursor: pointer;
     transition: 0.3s;
-    flex: 1;
-    min-width: 140px;
-    box-sizing: border-box;
-}
-
-.free {
-    background-color: #12464E;
-}
-
-.free:hover {
+  }
+  .VVIP{
+    width: 158px;
+    height: 110px;
+    border: 1px solid #197686;
+    border-radius: 10px;
+    color: white;
+    margin: auto;
+    text-align: left;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+.free:hover{
     background-color: #37b3c9;
-}
+  }
+  .VIP:hover{
+    background-color:  #12464E;
+  }
+  .VVIP:hover{
+    background-color:  #12464E;
+  }
 
-.VIP:hover,
-.VVIP:hover {
-    background-color: #12464E;
-}
-
-.grouped {
+  .grouped{
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    gap: 15px;
-    flex-wrap: wrap;
-}
+  }
 
-.amount {
-    margin: auto;
-    align-items: start;
+.amount{
+margin: auto;
+align-items: start;
 }
-
-ul {
+ul{
     list-style: none;
     display: flex;
     gap: 25px;
-    flex-wrap: wrap;
-    padding: 0;
-    justify-content: center;
 }
-
-.header {
+.header{
     display: flex;
     justify-content: space-between;
     color: white;
     width: 1000px;
     height: 60px;
-    border: 1px solid #197686;
+    border: 1px solid  #197686;
     border-radius: 9px;
-    margin: 30px auto;
-    padding: 5px;
-    max-width: calc(100% - 60px);
-    box-sizing: border-box;
-    flex-wrap: wrap;
+    margin: 30px;
+    padding: 5px 5px;
 }
-
-.square {
+.square{
     width: 408px;
     height: 150px;
-    margin-left: 55px;
+    margin-left:55px;
     background-color: #052228;
     padding: 20px;
-    max-width: calc(100% - 110px);
-    box-sizing: border-box;
+   
 }
-
-.pfp {
+.pfp{
     color: white;
     margin: auto;
     text-align: left;
     padding: 20px;
 }
-
-.file-input {
+.file-input{
     margin: auto;
 }
-
 .upload-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 150px;
     background-color: #102830;
-    margin: 15px;
+   margin: 15px;
     padding: 20px;
-    box-sizing: border-box;
-}
-
-.upload-box {
+  }
+  
+  .upload-box {
     width: 200px;
     height: 200px;
     display: flex;
@@ -327,115 +301,103 @@ ul {
     text-align: center;
     cursor: pointer;
     transition: 0.3s;
-    max-width: 100%;
-}
-
-.upload-box:hover {
+  }
+  
+  .upload-box:hover {
     background-color: #155d68;
-}
-
-.upload-icon {
+  }
+  
+  .upload-icon {
     font-size: 24px;
     margin-bottom: 10px;
-}
+  }
+  
+  /* Existing CSS remains unchanged */
 
-/* Media Queries */
-@media (max-width: 1024px) {
-    .header {
-        width: 90%;
-        margin: 30px auto;
-    }
-    
-    .square {
-        margin-left: 20px;
-        width: calc(100% - 40px);
-    }
-}
+/* Media Queries for Responsiveness */
 
+/* For screens smaller than 768px (e.g., mobile devices) */
 @media (max-width: 768px) {
-    .Total {
-        width: 335px;
-        height: auto;
-        min-height: 1165px;
+    .container, .container2, .Total {
+        width: 100%; /* Make containers full width */
+        height: auto; /* Allow height to adjust based on content */
+        margin: 20px auto; /* Reduce margin for smaller screens */
+        padding: 10px; /* Add padding for better spacing */
     }
-    
-    .Top {
-        width: 287px;
-        height: 76px;
+
+    .one, .two, .types, .upload, .free, .VIP, .VVIP, .square, .upload-box {
+        width: 100%; /* Make elements full width */
+        height: auto; /* Allow height to adjust */
+        margin: 10px 0; /* Adjust margin for smaller screens */
     }
-    
-    .container {
-        width: 335px;
-        height: auto;
-        min-height: 1165px;
-    }
-    
-    .event-info {
-        width: 287px;
-        height: auto;
-        min-height: 243px;
-    }
-    
-    .types {
-        width: 287px;
-        height: auto;
-        min-height: 410px;
-    }
-    
-    .grouped {
-        display: block;
-    }
-    
+
     .buttons {
-        flex-direction: column;
-        height: auto;
+        width: 100%; /* Make buttons full width */
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Add space between buttons */
     }
-    
+
     .button {
-        width: 100%;
-        max-width: 100%;
-        margin: 5px 0;
+        width: 100%; /* Make buttons full width */
+    }
+
+    .grouped {
+        flex-direction: column; /* Stack grouped items vertically */
+        gap: 10px; /* Add space between items */
+    }
+
+    .header {
+        width: 100%; /* Make header full width */
+        height: auto; /* Allow height to adjust */
+        margin: 10px 0; /* Adjust margin for smaller screens */
+        padding: 10px; /* Add padding for better spacing */
+    }
+
+    .upload-container {
+        height: auto; /* Allow height to adjust */
+        padding: 10px; /* Add padding for better spacing */
+    }
+
+    .upload-box {
+        width: 150px; /* Reduce upload box size */
+        height: 150px; /* Reduce upload box size */
+    }
+
+    .image {
+        width: 100%; /* Make images full width */
+        height: auto; /* Allow height to adjust */
+    }
+
+    input[type="text"], input[type="number"], #description {
+        width: 100%; /* Make input fields full width */
     }
 }
 
-@media (max-width: 480px) {
-    .Total,
-    .container,
-    .container2 {
-        width: 100%;
-        margin: 20px auto;
+/* For screens between 768px and 1024px (e.g., tablets) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container, .container2, .Total {
+        width: 90%; /* Reduce container width */
+        height: auto; /* Allow height to adjust */
+        margin: 30px auto; /* Adjust margin for tablets */
     }
-    
-    .one,
-    .two {
-        width: 90%;
-        height: auto;
-        min-height: 200px;
+
+    .one, .two, .types, .upload, .free, .VIP, .VVIP, .square, .upload-box {
+        width: 90%; /* Reduce element width */
+        height: auto; /* Allow height to adjust */
+        margin: 15px auto; /* Adjust margin for tablets */
     }
-    
-    .header {
-        height: auto;
-        padding: 10px;
+
+    .buttons {
+        width: 90%; /* Reduce buttons width */
     }
-    
-    .upload-container {
-        margin: 10px;
-        height: auto;
-    }
-    
+
     .upload-box {
-        width: 150px;
-        height: 150px;
+        width: 180px; /* Adjust upload box size */
+        height: 180px; /* Adjust upload box size */
     }
-    
-    ul {
-        gap: 15px;
-    }
-    
-    .free,
-    .VIP,
-    .VVIP {
-        width: 100%;
-        margin: 5px 0;
-    }
+}
+
+/* For screens larger than 1024px (e.g., desktops) */
+@media (min-width: 1024px) {
+    /* No changes needed, as the existing styles are already optimized for larger screens */
 }
