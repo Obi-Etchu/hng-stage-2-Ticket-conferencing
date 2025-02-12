@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./page.css"; // Import the CSS file
 import { useLocalStorage } from 'usehooks-ts'
+import { Link } from 'react-router-dom'
 
 export default function Page() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -8,7 +9,7 @@ export default function Page() {
   const [formdata, setFormdata] = useLocalStorage('formdata',{
     name: '',
     email: '',
-    avatar: '', 
+    file: null, 
     request: '',
   })
   const [tickets, setTickets] = useState(0)
@@ -131,16 +132,23 @@ const handleInput =(e)=>{
     <div className="whole">
     <div>
         <div className="header">
-          <div>
-            <p>tiez</p>
+          <div style={{display:"flex"}}>
+            <p><svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.00002 1.5V18.5M1.46402 7.344C1.21602 7.344 0.989018 7.142 1.00002 6.879C1.06702 5.337 1.25502 4.333 1.78002 3.539C2.07948 3.08653 2.45503 2.68933 2.89002 2.365C4.05502 1.5 5.70002 1.5 8.99202 1.5H13.006C16.298 1.5 17.943 1.5 19.11 2.365C19.541 2.685 19.917 3.082 20.219 3.539C20.744 4.333 20.932 5.337 20.999 6.879C21.01 7.142 20.783 7.344 20.534 7.344C19.148 7.344 18.024 8.533 18.024 10C18.024 11.467 19.148 12.656 20.534 12.656C20.783 12.656 21.01 12.858 20.999 13.122C20.932 14.663 20.744 15.667 20.219 16.462C19.9195 16.9141 19.5439 17.311 19.109 17.635C17.943 18.5 16.298 18.5 13.006 18.5H8.99302C5.70102 18.5 4.05602 18.5 2.88902 17.635C2.45438 17.3106 2.07918 16.9134 1.78002 16.461C1.25502 15.667 1.06702 14.663 1.00002 13.121C0.989018 12.858 1.21602 12.656 1.46402 12.656C2.85002 12.656 3.97402 11.467 3.97402 10C3.97402 8.533 2.85002 7.344 1.46402 7.344Z" stroke="white" width="1.5" />
+   </svg>
+tiez</p>
           </div>
           <ul>
-            <li>Events</li>
-            <li>My Tickets </li>
-            <li>About Project</li>
+            <Link to={'/'} style={{color:"white"}}>Events</Link>
+            <Link to={'/'} style={{color:"white"}}>My Tickets </Link>
+            <Link to={'/about'} style={{color:"white"}}>About Project</Link>
           </ul>
-          <div>
-            <p>My Tickets</p>
+        
+          <div className="link">
+            <Link to={'/'} style={{color:"black"}}><p>My Tickets <svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 3.5C0.723858 3.5 0.5 3.72386 0.5 4C0.5 4.27614 0.723858 4.5 1 4.5V3.5ZM17.3536 4.35355C17.5488 4.15829 17.5488 3.84171 17.3536 3.64645L14.1716 0.464466C13.9763 0.269204 13.6597 0.269204 13.4645 0.464466C13.2692 0.659728 13.2692 0.976311 13.4645 1.17157L16.2929 4L13.4645 6.82843C13.2692 7.02369 13.2692 7.34027 13.4645 7.53553C13.6597 7.7308 13.9763 7.7308 14.1716 7.53553L17.3536 4.35355ZM1 4.5L17 4.5V3.5L1 3.5V4.5Z" fill="#0A0C11"/>
+</svg>
+ </p></Link>
           </div>
         </div>
     <div className="Total">
@@ -225,10 +233,10 @@ const handleInput =(e)=>{
              <br></br>
               {/* Navigation Buttons */}
               <div className="buttons">
-              <button onClick={prevStep} disabled={currentStep === 1}>
+              <button onClick={prevStep} disabled={currentStep === 1} style={{width:"266px", height:"48", backgroundColor:"#052228", border:"2px solid #24A0B5", color:"white"}}>
             Previous
           </button>
-          <button onClick={handleNext} disabled={currentStep === totalSteps}>
+          <button onClick={handleNext} disabled={currentStep === totalSteps} style={{width:"266px", height:"48", backgroundColor:"#24A0B5", color:"white"}}>
             Next
           </button>
               </div>
@@ -287,8 +295,8 @@ const handleInput =(e)=>{
                <br></br>
               {/* Navigation Buttons */}
               <div className="buttons">
-                <button onClick={prevStep}>Previous</button>
-                <button type="submit">Get My free Ticket</button>
+                <button onClick={prevStep} style={{width:"266px", height:"48", backgroundColor:"#052228", border:"2px solid #24A0B5", color:"white"}}>Previous</button>
+                <button type="submit"  style={{width:"266px", height:"48", backgroundColor:"#24A0B5", color:"white"}}>Get My free Ticket</button>
               </div>
               </form>
             </div>
@@ -297,14 +305,15 @@ const handleInput =(e)=>{
 
           {currentStep === 3 && (
             <div className="confirmation">
-             
+             <div className="circle">
+              </div>;
 
               {/* Navigation Buttons */}
               <div className="buttons">
-              <button onClick={prevStep} disabled={currentStep === 1}>
+              <button onClick={prevStep} disabled={currentStep === 1} style={{width:"266px", height:"48", backgroundColor:"#052228", border:"2px solid #24A0B5", color:"white"}} >
             Previous
           </button>
-          <button onClick={nextStep} disabled={currentStep === totalSteps} className="next">
+          <button onClick={nextStep} disabled={currentStep === totalSteps} className="next" style={{width:"266px", height:"48", backgroundColor:"#24A0B5", color:"white"}}>
             Next
           </button>
               </div>

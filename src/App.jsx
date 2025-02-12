@@ -1,7 +1,7 @@
 
 import './App.css'
 import Page from './page'
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 function App() {
@@ -9,7 +9,14 @@ function App() {
 
   return (
     <>
-      <Page/>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Page />}>
+          {/* <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} /> */}
+        </Route>
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }
