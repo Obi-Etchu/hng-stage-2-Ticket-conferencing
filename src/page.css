@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Road+Rage&display=swap');
+
 * {
   
     box-sizing: border-box;
@@ -10,6 +12,10 @@ body{
     margin: auto;
     justify-content: center;
     
+}
+.title{
+  font-family: 'Road Rage', cursive;
+  font-size: xx-large;
 }
 .container {
    
@@ -57,6 +63,7 @@ body{
   }
   .event-info{
     color: white;
+    
   }
   .one{
    width: 556px;
@@ -66,7 +73,7 @@ body{
    justify-content: center;
    margin-top: 20px;
    border-radius: 10px;
-   background-color: #082023;
+   background: radial-gradient(circle, rgba(10,20,17,0.1), #0A0C11);
   }
   .two{
     width: 558px;
@@ -129,6 +136,7 @@ body{
     color: white;
     margin: auto;
     text-align: left;
+   
 }
 
 .image{
@@ -341,12 +349,16 @@ ul{
         margin: 10px 0; /* Adjust margin for smaller screens */
         padding: 15px; /* Add padding for better spacing */
     }
-
+    .one{
+      background: radial-gradient(circle, rgba(10,20,17,0.1), #0A0C11);
+    }
+     
     .buttons {
         width: 100%; /* Make buttons full width */
         flex-direction: column; /* Stack buttons vertically */
         gap: 10px; /* Add space between buttons */
         padding: 10px; /* Add padding for better spacing */
+        left: -90px;
     }
 
     .button {
@@ -381,7 +393,7 @@ ul{
         height: 150px; /* Reduce upload box size */
         padding: 10px; /* Add padding for better spacing */
     }
-
+     
     .image {
         width: 100%; /* Make images full width */
         height: auto; /* Allow height to adjust */
@@ -391,6 +403,9 @@ ul{
     input[type="text"], input[type="number"], #description {
         width: 100%; /* Make input fields full width */
         padding: 10px; /* Add padding for better spacing */
+    }
+    .top{
+      font-size: smaller;
     }
 
     .text, .pfp {
@@ -413,6 +428,9 @@ ul{
         margin: 15px auto; /* Adjust margin for tablets */
         padding: 15px; /* Add padding for better spacing */
     }
+    .one{
+      background: radial-gradient(circle, rgba(10,20,17,0.1), #0A0C11);
+    }
 
     .buttons {
         width: 90%; /* Reduce buttons width */
@@ -430,10 +448,108 @@ ul{
     }
 }
 
-/* For screens larger than 1024px (e.g., desktops) */
-@media (min-width: 1024px) {
-    /* No changes needed, as the existing styles are already optimized for larger screens */
+.box {
+  position: relative;
+  margin: auto;
+  width: 400px;
+  height: 650px;
+  background: #12464E;
+  border: 1px solid #24A0B5;
+  border-bottom: 2px dashed #24A0B5;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.corner {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border: none;
+  background-color: #052228
+}
+.top-left {
+left: -1px;
+top: -1px;
+border: none;
+border-top-width: 0px;
+border-left-width: 0px;
+border-bottom: 1px solid #24A0B5;
+border-right: 1px solid #24A0B5;
+border-bottom-right-radius: 100%;
+}
+.top-right {
+right: -1px;
+top: -1px;
+border-top-width: 0px;
+border-right-width: 0px;
+border-bottom: 1px solid #24A0B5;
+border-left: 1px solid #24A0B5;
+border-bottom-left-radius: 100%;
+}
+.bottom-left {
+left: -1px;
+bottom: -1px;
+border-left-width: 0px;
+border-bottom-width: 0px;
+border-top: 1px solid #24A0B5;
+border-right: 1px solid #24A0B5;
+border-top-right-radius: 100%;
+border: none;
+}
+.bottom-right {
+right: -1px;
+bottom: -1px;
+border-right-width: 0px;
+border-bottom-width: 0px;
+border-top: 1px solid #24A0B5;
+border-left: 1px solid #24A0B5;
+border-top-left-radius: 100%;
+border: none;
 }
 
+.center {
+position: absolute;
+display: grid;
+place-items: center;
+width: 90%;
+height: 95%;
+left: 50%;
+top: 50%;
+transform: translate(-50%,-50%);
+border: 1px solid #24A0B5;
+background-color: #08343C;
+border-radius: 15px;
+}
 
+.small-box {
+  position: relative;
+  margin:auto;
+  top: -20px;
+  height: 100px;
+  background: #12464E;
+  border: 1px solid #24A0B5;
+  border-top: 2px dashed #24A0B5;
+  justify-content: center;
+  width: 400px;
+ 
+}
+.joined{
+  display: flex;
+  flex-direction: column;
+}
 
+.ticket-container{
+  width: 90%;
+  height: 90%;
+  background-color: #133D44;
+  border-radius: 9px;
+  padding: 4px ;
+  overflow:hidden;
+  word-wrap: break-word; 
+  overflow-wrap: break-word; 
+  resize: vertical;
+}
+.separator {
+  width: 2px; 
+  height: 50px; 
+  background-color: white;
+}
