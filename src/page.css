@@ -320,121 +320,6 @@ ul{
     font-size: 24px;
     margin-bottom: 10px;
   }
-  
-  /* Existing CSS remains unchanged */
-
-/* Media Queries for Responsiveness */
-
-/* For screens smaller than 768px (e.g., mobile devices) */
-/* Existing CSS remains unchanged */
-
-/* Media Queries for Responsiveness */
-
-/* For screens smaller than 768px (e.g., mobile devices) */
-@media (max-width: 768px) {
-  .container, .container2, .Total {
-      width: 100%; /* Make containers full width */
-      height: auto; /* Allow height to adjust based on content */
-      margin: 20px auto; /* Reduce margin for smaller screens */
-      padding: 15px; /* Add padding for better spacing */
-  }
-
-  .one, .two, .types, .upload, .free, .VIP, .VVIP, .square, .upload-box {
-      width: 100%; /* Make elements full width */
-      height: auto; /* Allow height to adjust */
-      margin: 10px 0; /* Adjust margin for smaller screens */
-      padding: 15px; /* Add padding for better spacing */
-  }
-
-  .buttons {
-      width: 100%; /* Make buttons full width */
-      flex-direction: column; /* Stack buttons vertically */
-      gap: 10px; /* Add space between buttons */
-      padding: 10px; /* Add padding for better spacing */
-  }
-
-  .button {
-      width: 100%; /* Make buttons full width */
-      padding: 10px; /* Add padding for better spacing */
-  }
-
-  .grouped {
-      flex-direction: column; /* Stack grouped items vertically */
-      gap: 10px; /* Add space between items */
-      padding: 10px; /* Add padding for better spacing */
-  }
-
-  .header {
-      width: 100%; /* Make header full width */
-      height: auto; /* Allow height to adjust */
-      margin: 10px 0; /* Adjust margin for smaller screens */
-      padding: 15px; /* Add padding for better spacing */
-  }
-
-  .upload-container {
-      height: auto; /* Allow height to adjust */
-      padding: 15px; /* Add padding for better spacing */
-  }
-
-  .upload-box {
-      width: 150px; /* Reduce upload box size */
-      height: 150px; /* Reduce upload box size */
-      padding: 10px; /* Add padding for better spacing */
-  }
-
-  .image {
-      width: 100%; /* Make images full width */
-      height: auto; /* Allow height to adjust */
-      padding: 10px; /* Add padding for better spacing */
-  }
-
-  input[type="text"], input[type="number"], #description {
-      width: 100%; /* Make input fields full width */
-      padding: 10px; /* Add padding for better spacing */
-  }
-
-  .text, .pfp {
-      padding: 10px; /* Add padding for better spacing */
-  }
-}
-
-/* For screens between 768px and 1024px (e.g., tablets) */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .container, .container2, .Total {
-      width: 90%; /* Reduce container width */
-      height: auto; /* Allow height to adjust */
-      margin: 30px auto; /* Adjust margin for tablets */
-      padding: 20px; /* Add padding for better spacing */
-  }
-
-  .one, .two, .types, .upload, .free, .VIP, .VVIP, .square, .upload-box {
-      width: 90%; /* Reduce element width */
-      height: auto; /* Allow height to adjust */
-      margin: 15px auto; /* Adjust margin for tablets */
-      padding: 15px; /* Add padding for better spacing */
-  }
-
-  .buttons {
-      width: 90%; /* Reduce buttons width */
-      padding: 10px; /* Add padding for better spacing */
-  }
-
-  .upload-box {
-      width: 180px; /* Adjust upload box size */
-      height: 180px; /* Adjust upload box size */
-      padding: 15px; /* Add padding for better spacing */
-  }
-
-  .text, .pfp {
-      padding: 15px; /* Add padding for better spacing */
-  }
-}
-
-/* For screens larger than 1024px (e.g., desktops) */
-@media (min-width: 1024px) {
-  /* No changes needed, as the existing styles are already optimized for larger screens */
-}
-
 .box {
   position: relative;
   margin: auto;
@@ -524,6 +409,9 @@ border-radius: 15px;
   flex-direction: column;
 }
 
+.dets{
+  font-size: 1em;
+}
 .ticket-container{
   width: 90%;
   height: 90%;
@@ -541,3 +429,204 @@ border-radius: 15px;
   background-color: white;
 }
 
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 1024px) {
+  .header {
+      width: 120%;
+      margin: 30px auto;
+  }
+   
+  .det{
+    font-size: 20px;
+  }
+  .Total {
+      width: 120%;
+      max-width: 700px;
+  }
+  .header ul{
+    display: none;
+}
+}
+
+@media screen and (max-width: 768px) {
+  .Total {
+    width: 110%;
+    max-width: 700px;
+}
+  .container, .container2 {
+      width: 100%;
+      height: auto;
+      min-height: 782px;
+  }
+.types{
+  border: none;
+}
+  .det{
+    font-size: 5px;
+  }
+
+  .one, .two, .types {
+      width: 90%;
+  }
+  .header ul{
+    display: none;
+}
+  .buttons {
+      width: 95%;
+      flex-direction: column;
+      height: auto;
+      gap: 10px;
+  }
+   
+  .upload {
+    width: 90%;
+    height: 90%;
+    
+    aspect-ratio: 1/1;
+}
+
+.upload-box {
+    height: 120%;
+    width: 90%;
+    aspect-ratio: 1/1;
+}
+
+  .button {
+      width: 100%;
+  }
+
+  #description {
+      width: 90%;
+  }
+
+  .image {
+      width: 90%;
+      height: auto;
+  }
+
+  .grouped {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .free, .VIP, .VVIP {
+      width: 90%;
+      max-width: 300px;
+  }
+
+  ul {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .box, .small-box {
+      width: 90%;
+      max-width: 400px;
+  }
+
+  .square {
+      width: 90%;
+      margin-left: 0;
+  }
+
+  .one {
+    width: 100%;
+    padding: 15px;
+    margin: 0;
+}
+
+.types {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.grouped {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.free, .VIP, .VVIP {
+    width: calc(33% - 10px);
+    min-width: 140px;
+}
+
+.amount-container {
+    padding: 0 10px;
+}
+
+input[type="number"], 
+input[type="email"], 
+input[type="text"] {
+    width: 100%;
+    margin: 0;
+}
+
+.buttons {
+    width: 100%;
+    flex-direction: row;
+    margin: 20px 0;
+}
+}
+
+ 
+
+
+@media screen and (max-width: 480px) {
+  
+  .title {
+      font-size: 36px;
+  }
+  .Total {
+    width: 110%;
+    max-width: 700px;
+}
+.container, .container2 {
+  width: 100%;
+  height: auto;
+  height: 882px;
+}
+.types{
+  border: none;
+}
+  .upload {
+      width: 90%;
+      height: auto;
+      aspect-ratio: 1/1;
+  }
+
+  .upload-box {
+      width: 90%;
+      height: auto;
+      aspect-ratio: 1/1;
+  }
+
+  .box {
+      height: auto;
+      min-height: 630px;
+  }
+  .title {
+    font-size: 32px;
+}
+
+.grouped {
+  flex-direction: column;
+}
+
+.free, .VIP, .VVIP {
+  width: 100%;
+  margin: 5px 0;
+}
+
+.buttons {
+  flex-direction: column;
+  height: auto;
+  gap: 10px;
+}
+
+.buttons button {
+  width: 100%;
+}
+}

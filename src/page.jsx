@@ -279,7 +279,7 @@ const handleInput =(e)=>{
                 <h2 className="title" style={{marginBottom:"-15px", marginTop:"-5px"}}>
                   <b>Techember Fest '25</b>
                 </h2>
-                <p>
+                <p className="dets">
                   Join us for an unforgettable experience at
                   <br />
                   [EventName] Secure your spot now
