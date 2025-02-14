@@ -4,13 +4,15 @@ import "./page.css"; // Import the CSS file
 import { useLocalStorage } from 'usehooks-ts'
 import { Link } from 'react-router-dom'
 import html2canvas from 'html2canvas'
-
+import BarcodeGenerator from "./barcode";
 
 
 
 export default function Page() {
   const [currentStep, setCurrentStep] = useLocalStorage('currentStep', 1);
   const [ticketError, setTicketError] = useState("");
+  const [loading, setLoading] = useState(false)
+  const [typeofticket, setTypeofticket] = useState("")
   const [formdata, setFormdata] = useLocalStorage('formdata',{
     name: '',
     email: '', 
@@ -91,6 +93,7 @@ const handleInput =(e)=>{
   const handleFileChange = async (event) => {
     const selectedFile = event.target.files[0];
     if (!selectedFile) return;
+    setLoading(true)
   
     const data = new FormData();
     data.append("file", selectedFile);
@@ -104,12 +107,14 @@ const handleInput =(e)=>{
       });
       const uploadedImageURL = await res.json();
       console.log(uploadedImageURL.url);
+      setLoading(false)
   
       // Update formdata with the uploaded image URL
       setFormdata((prevFormData) => ({
         ...prevFormData,
         file: uploadedImageURL.secure_url, // Use secure_url from Cloudinary
       }));
+      
     } catch (error) {
       console.error("Error uploading file:", error);
     }
@@ -228,7 +233,7 @@ const handleInput =(e)=>{
 
           </div>
           <ul>
-            <Link to={'/'} style={{color:"white"}}>Events</Link>
+            <Link to={'/'} style={{color:"white"}} onClick={()=>setCurrentStep(1)}>Events</Link>
             <Link to={'/'} style={{color:"white"}}>My Tickets </Link>
             <Link to={'/about'} style={{color:"white"}}>About Project</Link>
           </ul>
@@ -245,14 +250,14 @@ const handleInput =(e)=>{
       <div className="Top">
         <div className="step-header">
           {/* Dynamic Header Title */}
-          <h2 className="header-title">
+          <h4 className="header-title">
             {currentStep === 1 && "Ticket Selection"}
             {currentStep === 2 && "Attendee Details"}
             {currentStep === 3 && "Ready"}
-          </h2>
-          <h2 className="header-step">
+          </h4>
+          <h4 className="header-step">
             Step {currentStep} / {totalSteps}
-          </h2>
+          </h4>
         </div>
 
         {/* Progress Bar */}
@@ -270,8 +275,8 @@ const handleInput =(e)=>{
           {currentStep === 1 && (
             <div className="container">
             <div className="one">
-              <div className="event-info">
-                <h2 className="title">
+              <div className="event-info" >
+                <h2 className="title" style={{marginBottom:"-15px", marginTop:"-5px"}}>
                   <b>Techember Fest '25</b>
                 </h2>
                 <p>
@@ -289,21 +294,26 @@ const handleInput =(e)=>{
               <p className="text">Select Ticket Type:</p>
               <div className="types">
               <div className="grouped">
-              <div className="free" onClick={()=>
+              <div className="free" onClick={()=>{
                 setTickets(tickets+1)
-              }>
+                setTypeofticket('Free')
+              }}>
                    <b>Free</b><br></br>
                    <small>REGULAR ACCESS</small><br></br>
                    <small>20/52</small>
               </div>
  
-                <div className="VIP" onClick={()=>setTickets(tickets+1)}>
+                <div className="VIP" onClick={()=>{setTickets(tickets+1);
+                  setTypeofticket("VIP")
+                }}>
                    <b>$150</b><br></br>
                    <small>VIP ACCESS</small><br></br>
                    <small>20/52</small><br></br>
                  </div>
  
-                 <div className="VVIP" onClick={()=>setTickets(tickets+1)}>
+                 <div className="VVIP" onClick={()=>{setTickets(tickets+1);
+                  setTypeofticket("VVIP")
+                 }}>
                    <b>$150</b><br></br>
                    <small>VVIP ACCESS</small><br></br>
                    <small>20/52</small>
@@ -345,7 +355,9 @@ const handleInput =(e)=>{
             onDrop={handleDrop}
           >
             <input type="file" onChange={handleFileChange} hidden />
+            
             {errors.file && <small style={{ color: "red" }}>{errors.file}</small>}
+            {loading? 'Uploading.....' : ''}
             {formdata.file ? (
               <img
                 src={formdata.file} // Use formdata.file for the image URL
@@ -354,10 +366,15 @@ const handleInput =(e)=>{
               />
             ) : (
               <>
-                <span className="upload-icon">☁️</span>
+                <span className="upload-icon"><svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23.2639 8.81602C22.6812 4.22669 18.7505 0.666687 14.0052 0.666687C10.3305 0.666687 7.13854 2.81469 5.68121 6.20002C2.81721 7.05602 0.671875 9.76002 0.671875 12.6667C0.671875 16.3427 3.66254 19.3334 7.33854 19.3334H8.67188V16.6667H7.33854C5.13321 16.6667 3.33854 14.872 3.33854 12.6667C3.33854 10.7947 4.93721 8.99069 6.90254 8.64535L7.67721 8.50935L7.93321 7.76535C8.87054 5.03069 11.1972 3.33335 14.0052 3.33335C17.6812 3.33335 20.6719 6.32402 20.6719 10V11.3334H22.0052C23.4759 11.3334 24.6719 12.5294 24.6719 14C24.6719 15.4707 23.4759 16.6667 22.0052 16.6667H19.3385V19.3334H22.0052C24.9465 19.3334 27.3385 16.9414 27.3385 14C27.337 12.8047 26.9347 11.6444 26.196 10.7047C25.4574 9.76492 24.425 9.09994 23.2639 8.81602Z" fill="#FAFAFA"/>
+                <path d="M15.3385 12.6667V7.33335H12.6719V12.6667H8.67188L14.0052 19.3334L19.3385 12.6667H15.3385Z" fill="#FAFAFA"/>
+                </svg>
+                </span>
                 <p>Drag & drop or click to upload</p>
               </>
             )}
+            
           </label>
         </div>
       </div>
@@ -370,19 +387,19 @@ const handleInput =(e)=>{
               <form onSubmit={handleSubmit}>
               <label htmlFor="Username">Enter your name:</label>
               <br />
-              <input type="text" id="Username" placeholder="Full Name" value={formdata.name} name="name" onChange={handleInput}/>
+              <input type="text" id="Username" placeholder="Full Name" value={formdata.name} name="name" onChange={handleInput} required/>
               {errors.name && <small style={{ color: "red" }}>{errors.name}</small>}
               <br />
               <br />
               <label htmlFor="Email">Enter your email:</label>
               <br />
-              <input type="text" id="Email" placeholder="example@email.com" value={formdata.email} name="email" onChange={handleInput}/>
+              <input type="email" id="Email" placeholder="example@email.com" value={formdata.email} name="email" onChange={handleInput} required/>
               {errors.email && <small style={{ color: "red" }}>{errors.email}</small>}
               <br />
               <br />
               <label htmlFor="description">Special Request?:</label>
               <br />
-              <textarea id="description" placeholder="Describe your project..." value={formdata.request} name="request" onChange={handleInput}/>
+              <textarea id="description" placeholder="Describe your project..." value={formdata.request} name="request" onChange={handleInput} required/>
               {errors.request && <small style={{ color: "red" }}>{errors.request}</small>}
                <br></br>
               {/* Navigation Buttons */}
@@ -398,11 +415,16 @@ const handleInput =(e)=>{
           {currentStep === 3 && (
             <div className="confirmation">
               <div className="joined">
+              <h2 style={{color:"white"}}>Your Ticket Is Booked!</h2>
+              <small style={{color:"white"}}>Check your Email for a copy or you can <span onClick={handleDownload} style={{hover:"cusor"}}>download</span></small>
+             <br></br>
              <div className="box">
+             
   <div className="corner top-left"></div>
   <div className="corner top-right"></div>
   <div className="corner bottom-left"></div>
   <div className="corner bottom-right"></div>
+  
   <div className="center">
     <div className="details" style={{width:"190px", height:"76px", color:"white"}}>
                   <b>Techember Fest '25</b>
@@ -421,6 +443,7 @@ const handleInput =(e)=>{
       )}
       </div>
   <div className="ticket-container">
+    
       <div className="user-info" style={{display:"flex", justifyContent:"space-between"}}>
         <div className="name">
            <small style={{color:"#a0b2b8"}}>Your name</small>
@@ -438,7 +461,8 @@ const handleInput =(e)=>{
       <div className="ticket-info" style={{display:"flex", justifyContent:"space-between"}}>
       <div>
       <small style={{color:"#a0b2b8"}}>Type of Ticket</small>
-      <p></p>
+      <br></br>
+      <small style={{color:"white"}}>{typeofticket}</small>
         </div>
         
         <div>
@@ -464,15 +488,19 @@ const handleInput =(e)=>{
   <div className="corner bottom-left"></div>
   <div className="corner bottom-right"></div>
   <div className="center">
-  
+  <BarcodeGenerator value="987654321098" 
+  format="CODE39" 
+  width={1.2} 
+  height={40} 
+  lineColor="white" 
+  />
   </div>
 </div>
  </div>
- <br></br>
- <br></br>
+ 
 
               {/* Navigation Buttons */}
-              <div className="buttons" style={{ gap:"20px"}}>
+              <div className="buttons">
               <button onClick={handleBook} disabled={currentStep === 1} style={{width:"266px", height:"48", backgroundColor:"#052228", border:"2px solid #24A0B5", color:"white"}} 
             >
             Book another Ticket
