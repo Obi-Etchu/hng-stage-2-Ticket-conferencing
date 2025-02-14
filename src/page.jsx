@@ -492,7 +492,7 @@ const handleInput =(e)=>{
   <div className="center">
   <BarcodeGenerator value="987654321098" 
   format="CODE39" 
-  width={1.2} 
+  width={1.1} 
   height={40} 
   lineColor="white" 
   />

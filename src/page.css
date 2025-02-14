@@ -532,8 +532,7 @@ border-radius: 15px;
   }
 
   .square {
-      width: 90%;
-      margin-left: 0;
+    display: none;
   }
 
   .one {
@@ -593,7 +592,7 @@ input[type="text"] {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: -20px;
+  margin-top: -25px;
   padding-top: -20px;
 }
 }
@@ -619,6 +618,9 @@ input[type="text"] {
   height: auto;
   height: 882px;
 }
+.square {
+  display: none;
+}
 .container{
   width: 100%;
   height: auto;
@@ -632,14 +634,17 @@ input[type="text"] {
   width: 100%;
 }
   .upload {
-      width: 90%;
-      height: auto;
+      width: 150%;
+      height: 150%;
       aspect-ratio: 1/1;
+      display: none;
   }
-
+.upload-container{
+  background-color: #07373F;
+}
   .upload-box {
-      width: 90%;
-      height: auto;
+      width: 250%;
+      height: 200%;
       aspect-ratio: 1/1;
   }
 
