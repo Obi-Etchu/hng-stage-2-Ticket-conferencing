@@ -151,7 +151,7 @@ body{
     margin: auto;
     justify-content: center;
 }
-input[type="number"], input[type="email"], input[type="text"]{
+input[type="number"], input[type="email"], input[type="text"], input[type="textarea"]{
     width: 100%;
     height: 48px;
     border-radius: 7px;
@@ -258,6 +258,9 @@ ul{
     border-radius: 9px;
     margin: 30px;
     padding: 5px 5px;
+}
+textarea{
+  color: white;
 }
 .square{
     width: 408px;
@@ -462,11 +465,20 @@ border-radius: 15px;
   margin: 10px 0; /* Adjust margin for smaller screens */
   padding: 15px; /* Add padding for better spacing */
 }
-  .container, .container2 {
+  .container {
       width: 100%;
       height: auto;
       min-height: 782px;
+      padding: 8px;
   }
+  .container2 {
+    width: 100%;
+    height: auto;
+    min-height: 782px;
+    padding: 8px;
+   
+}
+
 .types{
   border: none;
 }
@@ -477,6 +489,7 @@ border-radius: 15px;
   .one, .two, .types {
       width: 90%;
   }
+  
   .header ul{
     display: none;
 }
@@ -488,12 +501,12 @@ border-radius: 15px;
    
   .upload {
     width: 90%;
-    height: 90%;
+    height: 85%;
     aspect-ratio: 1/1;
 }
 
 .upload-box {
-    height: 120%;
+    height: 110%;
     width: 90%;
     aspect-ratio: 1/1;
 }
@@ -527,7 +540,7 @@ border-radius: 15px;
   }
 
   .box, .small-box {
-      width: 90%;
+      width: 100%;
       max-width: 400px;
   }
 
