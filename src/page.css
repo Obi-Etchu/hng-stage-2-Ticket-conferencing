@@ -475,7 +475,6 @@ border-radius: 15px;
   .buttons {
       width: 95%;
       flex-direction: column;
-      height: auto;
       gap: 10px;
   }
    
@@ -539,6 +538,17 @@ border-radius: 15px;
 .types {
     width: 100%;
     margin: 20px 0;
+    display: flex;
+  flex-direction: column;
+  gap: 15px;
+  
+}
+
+.amount {
+  display: block;
+  margin-top: 170px;
+  font-weight: bold;
+  
 }
 
 .grouped {
@@ -562,12 +572,23 @@ input[type="email"],
 input[type="text"] {
     width: 100%;
     margin: 0;
+    
+    padding: 10px;
+  
 }
 
 .buttons {
     width: 100%;
     flex-direction: row;
     margin: 20px 0;
+}
+.one-button{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: -20px;
+  
+  padding-top: -20px;
 }
 }
 
@@ -590,6 +611,10 @@ input[type="text"] {
 }
 .types{
   border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
 }
   .upload {
       width: 90%;
@@ -620,6 +645,11 @@ input[type="text"] {
   margin: 5px 0;
 }
 
+.event-info {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
 .buttons {
   flex-direction: column;
   height: auto;
@@ -628,5 +658,13 @@ input[type="text"] {
 
 .buttons button {
   width: 100%;
+}
+.one-button{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin: auto;
+  padding: 20px;
 }
 }
