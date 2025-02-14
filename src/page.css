@@ -433,15 +433,17 @@ border-radius: 15px;
 /* Media Queries for Responsive Design */
 @media screen and (max-width: 1024px) {
   .header {
-      width: 120%;
-      margin: 30px auto;
-  }
+    width: 100%; /* Make header full width */
+    height: auto; /* Allow height to adjust */
+    margin: 10px 0; /* Adjust margin for smaller screens */
+    padding: 15px; /* Add padding for better spacing */
+}
    
   .det{
     font-size: 20px;
   }
   .Total {
-      width: 120%;
+      width: 100%;
       max-width: 700px;
   }
   .header ul{
@@ -451,8 +453,14 @@ border-radius: 15px;
 
 @media screen and (max-width: 768px) {
   .Total {
-    width: 110%;
+    width: 100%;
     max-width: 700px;
+}
+.header {
+  width: 100%; /* Make header full width */
+  height: auto; /* Allow height to adjust */
+  margin: 10px 0; /* Adjust margin for smaller screens */
+  padding: 15px; /* Add padding for better spacing */
 }
   .container, .container2 {
       width: 100%;
@@ -481,7 +489,6 @@ border-radius: 15px;
   .upload {
     width: 90%;
     height: 90%;
-    
     aspect-ratio: 1/1;
 }
 
@@ -577,8 +584,8 @@ input[type="text"] {
   
 }
 
-.buttons {
-    width: 100%;
+.button {
+    width: 90%;
     flex-direction: row;
     margin: 20px 0;
 }
@@ -587,27 +594,35 @@ input[type="text"] {
   display: flex;
   justify-content: center;
   margin-top: -20px;
-  
   padding-top: -20px;
 }
 }
-
- 
-
 
 @media screen and (max-width: 480px) {
   
   .title {
       font-size: 36px;
   }
-  .Total {
-    width: 110%;
-    max-width: 700px;
+  .header {
+    width: 100%; /* Make header full width */
+    height: auto; /* Allow height to adjust */
+    margin: 10px 0; /* Adjust margin for smaller screens */
+    padding: 15px; /* Add padding for better spacing */
 }
-.container, .container2 {
-  width: 100%;
+  .Total {
+    width: 100%;
+    max-width: 700px;
+   height: fit-content;
+}
+.container2 {
+  width: 105%;
   height: auto;
   height: 882px;
+}
+.container{
+  width: 100%;
+  height: auto;
+  height: 982px;
 }
 .types{
   border: none;
@@ -657,7 +672,7 @@ input[type="text"] {
 }
 
 .buttons button {
-  width: 100%;
+  width: 90%;
 }
 .one-button{
   width: 100%;
