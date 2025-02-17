@@ -408,7 +408,7 @@ export default function Page() {
                     {/* Navigation Buttons */}
                     <div className="buttons">
                       <button onClick={prevStep} style={{ width: "266px", height: "48", backgroundColor: "#052228", border: "2px solid #24A0B5", color: "white" }}>Previous</button>
-                      <button type="submit" style={{ width: "266px", height: "48", backgroundColor: "#24A0B5", color: "white" }}>Get My free Ticket</button>
+                      <button type="submit" style={{ width: "266px", height: "48", backgroundColor: "#24A0B5", color: "white" }}>Get my {typeofticket} Ticket</button>
                     </div>
                   </form>
                 </div>
